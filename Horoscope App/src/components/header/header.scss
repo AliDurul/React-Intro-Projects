@@ -1,0 +1,30 @@
+header {
+  margin-top: 3rem;
+  h1 {
+    text-align: center;
+    font-size: 48px;
+    color: black;
+
+    transition: all 0.5s ease-in-out;
+    span {
+      animation: animasyon 1.2s ease-in-out infinite;
+      letter-spacing: 5px;
+      text-decoration: underline;
+      cursor: pointer;
+      &:hover {
+        color: #cd890c;
+      }
+    }
+  }
+}
+
+@keyframes animasyon {
+  0% {
+    opacity: 0.7;
+    text-shadow: 2px 2px 5px #cd890c;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 2px 2px 5px #cd890c;
+  }
+}

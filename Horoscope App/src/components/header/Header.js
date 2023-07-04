@@ -1,9 +1,13 @@
-
+import "./header.scss";
 
 const Header = () => {
   return (
-    <div>Header</div>
-  )
-}
+    <header>
+      <h1>
+        <span>WHO ARE YOU ?</span>
+      </h1>
+    </header>
+  );
+};
 
-export default Header
+export default Header;
