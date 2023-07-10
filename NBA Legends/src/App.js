@@ -1,9 +1,16 @@
+import CardContainer from "./compenents/CardContainer";
+import Header from "./compenents/Header";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./sass/App.scss"
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hello React</h1>
-    </div>
-  )
+    <>
+      <Header />
+      <CardContainer />
+    </>
+  );
 }
 
-export default App
+export default App;
