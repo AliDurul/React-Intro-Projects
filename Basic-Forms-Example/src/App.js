@@ -10,17 +10,32 @@ export default function App() {
     email: "",
   });
 
+  const [submitted, setSubmitted] = useState(false);
+  const [isvalid, setIsvalid] = useState(false);
+
   const { firstName, lastName, phoneNumber, address, email } = values;
 
   const handleValues = (e) => {
-    setValues({...values, [e.target.name]:e.target.value})
+    setValues({ ...values, [e.target.name]: e.target.value });
   };
-console.log(firstName);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (firstName && lastName && phoneNumber && address && email){
+      setIsvalid(true)
+    }
+      setSubmitted(true);
+  };
+
+  console.log(submitted);
   return (
     <div className="form-container">
-      <form className="register-form">
-        {/* Uncomment the next line to show the success message */}
-        {/* <div class="success-message">Success! Thank you for registering</div> */}
+      <form className="register-form" onSubmit={handleSubmit}>
+        {submitted && isvalid && (
+          <div className="success-message">
+            Success! Thank you for registering
+          </div>
+        )}
         <input
           onChange={handleValues}
           value={firstName}
@@ -30,7 +45,13 @@ console.log(firstName);
           placeholder="First Name"
           name="firstName"
         />
+        {submitted && !firstName && (
+          <span id="first-name-error">Please enter a first name</span>
+        )}
+
         <input
+          onChange={handleValues}
+          value={lastName}
           id="last-name"
           className="form-field"
           type="text"
@@ -38,15 +59,18 @@ console.log(firstName);
           name="lastName"
         />
         <input
+          onChange={handleValues}
+          value={phoneNumber}
           id="phone-number"
           className="form-field"
           type="text"
           placeholder="Phone Number"
           name="phoneNumber"
         />
-        {/* Uncomment the next line to show the error message */}
         {/* <span id="first-name-error">Please enter a first name</span> */}
         <input
+          onChange={handleValues}
+          value={address}
           id="adress"
           className="form-field"
           type="text"
@@ -56,6 +80,8 @@ console.log(firstName);
         {/* Uncomment the next line to show the error message */}
         {/* <span id="last-name-error">Please enter a last name</span> */}
         <input
+          onChange={handleValues}
+          value={email}
           id="email"
           className="form-field"
           type="text"
