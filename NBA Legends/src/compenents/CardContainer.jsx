@@ -1,10 +1,14 @@
+import Card from "./Card"
+import { data } from "../helpers/data"
 
 const CardContainer = () => {
-  return (
-    <div className="d-flex justify-content-center mt-5 card__compenent">
+    console.log(data);
+    return (
+        <div className="bg p-4 d-flex flex-wrap gap-5 container justify-content-center ">
+            {data.map((player) => <Card data={player} />)}
 
-    </div>
-  )
+        </div>
+    )
 }
 
 export default CardContainer
