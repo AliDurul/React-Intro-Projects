@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./index.css";
 
 export default function App() {
   const [values, setValues] = useState({
     firstName: "",
     lastName: "",
-    PhoneNumber: "",
+    phoneNumber: "",
     adress: "",
-    email: ""
+    email: "",
   });
+const [table, setTable] = useState()
 
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const { firstName, lastName, PhoneNumber, adress, email } = values;
+  const { firstName, lastName, phoneNumber, adress, email } = values;
 
   const handleValues = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -20,38 +19,22 @@ export default function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
+   setTable(values)
+
     setValues({
       firstName: "",
       lastName: "",
-      PhoneNumber: "",
+      phoneNumber: "",
       adress: "",
-      email: ""
-    })
+      email: "",
+    });
   };
-
-  useEffect(() => {
-    let timeout;
-
-    if (isSubmitted) {
-      timeout = setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000); // 5 seconds
-    }
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [isSubmitted]);
-
   return (
     <div className="form-container">
       <form className="register-form" onSubmit={handleSubmit}>
-        {isSubmitted && (
-          <div className="success-message">
+        {/*  <div className="success-message">
             Success! Thank you for registering
-          </div>
-        )}
+          </div> */}
 
         <input
           onChange={handleValues}
@@ -63,6 +46,7 @@ export default function App() {
           required
           value={firstName}
         />
+        <span>{values.firstName}</span>
         <input
           onChange={handleValues}
           id="last-name"
@@ -73,16 +57,18 @@ export default function App() {
           required
           value={lastName}
         />
+        <span>{values.lastName}</span>
         <input
           onChange={handleValues}
           id="phone-number"
           className="form-field"
           type="text"
           placeholder="Phone Number"
-          name="PhoneNumber"
+          name="phoneNumber"
           required
-          value={PhoneNumber}
+          value={phoneNumber}
         />
+        <span>{values.phoneNumber}</span>
         {/* <span id="first-name-error">Please enter a first name</span> */}
         <input
           onChange={handleValues}
@@ -94,7 +80,8 @@ export default function App() {
           required
           value={adress}
         />
-     
+        <span>{values.adress}</span>
+
         {/* Uncomment the next line to show the error message */}
         {/* <span id="last-name-error">Please enter a last name</span> */}
         <input
@@ -107,12 +94,36 @@ export default function App() {
           required
           value={email}
         />
+        <span>{values.email}</span>
+
         {/* Uncomment the next line to show the error message */}
         {/* <span id="email-error">Please enter an email address</span> */}
         <button className="form-field" type="submit">
           Register
         </button>
       </form>
+     { table && <table>
+        <tr>
+          <th>First Name</th>
+          <td>{table && table.firstName}</td>
+        </tr>
+        <tr>
+          <th>last Name</th>
+          <td>{table && table.lastName}</td>
+        </tr>
+        <tr>
+          <th>Phone Number</th>
+          <td>{table && table.phoneNumber}</td>
+        </tr>
+        <tr>
+          <th>Adress</th>
+          <td>{table && table.adress}</td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>{table && table.email}</td>
+        </tr>
+      </table>}
     </div>
   );
 }
