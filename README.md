@@ -3,6 +3,6 @@
 [nba-legend.vercel.app](https://nba-legend.vercel.app/)
 
 <br/>
-https://lesson-reminder.vercel.app/
+https://react-photogallery.vercel.app/
 <br/>
 https://app-horoscope.vercel.app/
