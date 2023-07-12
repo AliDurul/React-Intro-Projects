@@ -1,6 +1,6 @@
 # React-Intro-Projects
 
-nba-legend.vercel.app
+[nba-legend.vercel.app](https://nba-legend.vercel.app/)
 
 <br/>
 https://lesson-reminder.vercel.app/
