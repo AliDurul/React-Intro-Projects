@@ -5,7 +5,8 @@ const Header = ({ setTodos, todos }) => {
 
     const [task, setTask] = useState({
         id: "",
-        text: ""
+        text: "",
+        
     });
 
     const handleSubmit = (e) => {
@@ -13,17 +14,18 @@ const Header = ({ setTodos, todos }) => {
         setTodos([...todos, task])
         setTask({
             id: "",
-            text: ""
+            text: "",
+            
         })
     }
 
     const handleInput = (e) => {
         setTask({
             id: uuidv4(),
-            text: e.target.value
+            text: e.target.value,
+            checked:false
         })
     }
-    console.log(`task: ${task.id} ${task.text}`);
     return (
         <div className='container text-center'>
             <h1 className='text-danger'>Todo App</h1>
