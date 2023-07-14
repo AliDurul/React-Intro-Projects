@@ -16,7 +16,7 @@ const TdoList = ({ todos, setTodos }) => {
                 {
                     todos.map((item) => {
                         return (
-                            <div key={item.id} className={`.text-truncate p-2 text-uppercase d-flex justify-content-between  align-items-center mt-2 bg-info border rounded-3 ${(item.checked ? 'text-decoration-line-through done' : undefined)}`}>
+                            <div key={item.id} className={`fw-bold text-wrap p-2 text-uppercase d-flex justify-content-between  align-items-center mt-2 bg-info border rounded-3 ${(item.checked ? 'text-decoration-line-through done' : undefined)}`} style={{width: "100%"}}>
                                 <input onClick={(e) => isChecked(item.id, e.target.checked)} type="checkbox" name="" id={item.id} />
                                 <div className='mt-2' >
                                     <p>{item.text}</p>
