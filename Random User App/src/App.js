@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import mailSvg from "./assets/mail.svg";
 import manSvg from "./assets/man.svg";
 import womanSvg from "./assets/woman.svg";
@@ -14,6 +14,23 @@ const url = "https://randomuser.me/api/";
 const defaultImage = "https://randomuser.me/api/portraits/men/75.jpg";
 
 function App() {
+const [randomPerson, setRandomPerson] = useState([])
+
+
+  const getData = async () => {
+    const response = await fetch(url);
+    const data = await response.json()
+    return data.results[0]
+  }
+
+  
+  useEffect(() => {
+    
+    getData().then(data => setRandomPerson(data) )
+  
+ }, [])
+ 
+ console.log(randomPerson);
   return (
     <main>
       <div className="block bcg-orange">
