@@ -31,7 +31,7 @@ const Header = ({ setTodos, todos }) => {
             <h1 className='text-danger'>Todo App</h1>
             <div className="row justify-content-center mt-5">
                 <form onSubmit={handleSubmit} action="#" className='d-flex w-50 '>
-                    <input onChange={handleInput} type="text" className='form-control' value={task.text} />
+                    <input onChange={handleInput} type="text" className='form-control' value={task.text} required />
                     <button type="submit" className='btn btn-primary'>Add</button>
                 </form>
             </div>
