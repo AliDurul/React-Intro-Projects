@@ -1,6 +1,7 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./compenents/Header";
 import TdoList from "./compenents/TdoList";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css"
 import { useState } from "react";
 function App() {
   const [todos, setTodos] = useState([]);
