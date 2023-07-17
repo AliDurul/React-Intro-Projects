@@ -6,13 +6,13 @@ const Home = () => {
 
   const [tutorials, setTutorials] = useState()
 
-  const base_url = "https://tutorial-api.fullstack.clarusway.com/tutorials/"
+ 
 
   const getTutorials = async () => {
+    const base_url = "https://tutorial-api.fullstack.clarusway.com/tutorials/"
     try {
       const {data} = await axios.get(base_url)
       setTutorials(data)
-      console.log(tutorials);
     } catch (error) {
       console.log(error);
     }
@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <>
-      <AddTutorial />
+      <AddTutorial getTutorials={getTutorials} />
       <TutorialList tutorials={tutorials} />
     </>
   );
