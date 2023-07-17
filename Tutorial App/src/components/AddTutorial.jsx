@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useState } from "react"
 
-const AddTutorial = ({getTutorials}) => {
+const AddTutorial = ({ getTutorials }) => {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
 
@@ -15,9 +15,9 @@ const AddTutorial = ({getTutorials}) => {
   }
 
   const postTutorial = async (newTutor) => {
+    const base_url = "https://tutorial-api.fullstack.clarusway.com/tutorials/"
     try {
-      const base_url = "https://tutorial-api.fullstack.clarusway.com/tutorials/"
-      await axios.post(base_url, newTutor )
+      await axios.post(base_url, newTutor)
 
     } catch (error) {
       console.log(error);
