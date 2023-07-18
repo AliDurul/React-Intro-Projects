@@ -101,4 +101,5 @@ body{
     align-items: center;
     color: white;
     margin: 0 5px 0 5px;
+    cursor: pointer;
 }

@@ -6,12 +6,13 @@ import axios from "axios"
 
 const Meal = () => {
 
-    const [url, setUrl] = useState("https://www.themealdb.com/api/json/v1/1/search.php?f=a");
-
-
     const [meals, setMeals] = useState()
+    const [search, setSearch] = useState("")
+
+    const [url, setUrl] = useState(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`);
 
 
+  
     const fetcData = async () => {
         const request = await axios.get(url)
         setMeals(request.data.meals)
@@ -19,15 +20,22 @@ const Meal = () => {
 
     useEffect(() => {
         fetcData()
-
     }, [url])
 
 
     const handleSearch = (e) => {
-        setUrl(`https://www.themealdb.com/api/json/v1/1/search.php?s=${e.target.value}`)
-      
+        setSearch(e.target.value.toLocaleLowerCase())
+       
+        setUrl(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
+
     }
-    console.log(meals);
+
+    const setIndex = (alpha) => {
+        setUrl(`https://www.themealdb.com/api/json/v1/1/search.php?f=${alpha}`)
+    }
+
+
+
 
     return (
         <>
@@ -38,18 +46,20 @@ const Meal = () => {
                 </div>
                 <div className="searchBox">
                     <form action="" >
-                        <input type="search" className="search-bar" onChange={ handleSearch } />
+                        <input type="search" className="search-bar"
+                        placeholder="Search for meal.."
+                        onChange={(e) => handleSearch(e)} />
                     </form>
                 </div>
                 <div className="container">
 
                     {
-                        meals && <MealItem meals = {meals} /> 
+                        meals ? <MealItem meals={meals} /> : "No Data Found!"
                     }
 
                 </div>
                 <div className="indexContainer">
-                    <ReacipeIndex />
+                    <ReacipeIndex alphaIndex={(alpha)=>setIndex(alpha)}/>
                 </div>
 
             </div>
