@@ -18,7 +18,7 @@ body{
 .heading h1{
     color:#030e12;
     font-size: 48px;
-    font-weight:900;
+    font-weight:700;
     letter-spacing: 1px;
     padding-top:2rem;
     margin: 1rem;
@@ -44,6 +44,7 @@ body{
     border-radius: 1rem;
     background-color: #030e12;
     padding: 5px;
+    cursor: pointer;
 }
 .card img{
     width: 100%;
