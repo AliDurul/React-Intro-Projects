@@ -2,9 +2,12 @@
 
   Project Name       |Libraries and Technologies I use     
 :-------------------------|-------------------------
-[NBA Legends](https://nba-legend.vercel.app/)| Html, Css, React, Js
-[Photo Gallery](https://react-photogallery.vercel.app/)| React, Html, Css, Js
-[Horoscope App](https://app-horoscope.vercel.app/)| React, Html, Sass, Js
+[NBA Legends](https://nba-legend.vercel.app/)| Html, Css, React Js, Bootstrap
+[Photo Gallery](https://react-photogallery.vercel.app/)| React Js, Html, Css, Bootstrap
+[Horoscope App](https://app-horoscope.vercel.app/)| React Js, Html, Sass, Js
+[Interview Accord](https://interview-accordd.vercel.app/)| React Js, Html, Css, Bootstrap
+[Products List](https://products-listt.vercel.app/)| React Js, Html, Css, Bootstrap
+[ToDo Aoo Basic](https://todo-app-basics.vercel.app/)| React Js, Html, Css, Bootstrap
 
 
 
