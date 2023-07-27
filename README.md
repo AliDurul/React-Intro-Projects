@@ -7,7 +7,7 @@
 [Horoscope App](https://app-horoscope.vercel.app/)| React Js, Html, Sass, Js
 [Interview Accord](https://interview-accordd.vercel.app/)| React Js, Html, Css, Bootstrap
 [Products List](https://products-listt.vercel.app/)| React Js, Html, Css, Bootstrap
-[ToDo Aoo Basic](https://todo-app-basics.vercel.app/)| React Js, Html, Css, Bootstrap
+[ToDo App Basic](https://todo-app-basics.vercel.app/)| React Js, Html, Css, Bootstrap
 
 
 
