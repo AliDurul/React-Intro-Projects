@@ -1,7 +1,9 @@
+import Router from "./router/Router"
+import "./css/main.css"
 function App() {
   return (
-    <div className="App">
-      <h1>Hello React</h1>
+    <div >
+      <Router/>
     </div>
   )
 }
