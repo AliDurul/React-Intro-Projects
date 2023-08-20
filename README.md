@@ -8,6 +8,8 @@
 [Interview Accord](https://interview-accordd.vercel.app/)| React Js, Html, Css, Bootstrap
 [Products List](https://products-listt.vercel.app/)| React Js, Html, Css, Bootstrap
 [ToDo App Basic](https://todo-app-basics.vercel.app/)| React Js, Html, Css, Bootstrap
+[Movie Info Card](https://movie-info-card-seven.vercel.app/)| React Js, Html, Css, Bootstrap
+
 
 
 
